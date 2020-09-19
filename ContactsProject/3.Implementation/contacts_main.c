@@ -38,13 +38,13 @@ int main(){
                     break;
                 fflush(stdin);
                 printf("Phone:");
-                scanf("%ld",list.phone);
+                scanf("%ld",&list.phone);
                 fflush(stdin);
                 printf("address:");
                 scanf("%[^\n]",list.add);
                 fflush(stdin);
                 printf("email address:");
-                gets(list.email);
+                scanf("%[^\n]",list.email);
                 printf("\n");
                 fwrite(&list,sizeof(list),1,fp);
             }
@@ -70,7 +70,7 @@ int main(){
                 
                 if(found!=0){
                     printf("=========================================================== [%c]-(%d)\n\n",i-32,found);
-                    getch();
+                    
                 }
                 fclose(fp);
             }
@@ -96,7 +96,7 @@ int main(){
                 for(i=0;i<=l;i++)
                     name[i]=list.name[i];
                 name[l]='\0';
-                if(stricmp(name,query)==0){
+                if(strcmp(name,query)==0){
                     printf("\n..::Name\t: %s\n..::Phone\t: %ld\n..::Address\t: %s\n..::Email\t:%s\n",list.name,list.phone,list.add,list.email);
                     found++;
                     if (found%4==0)
@@ -132,16 +132,16 @@ int main(){
             fflush(stdin);
             printf("\n\n..::Editing '%s'\n\n",name);
             printf("..::Name(Use identical):");
-            scanf("%[^\n]",&list.name);
+            scanf("%[^\n]",list.name);
             fflush(stdin);
             printf("..::Phone:");
-            scanf("%ld",&list.ph);
+            scanf("%ld",&list.phone);
             fflush(stdin);
             printf("..::address:");
-            scanf("%[^\n]",&list.add);
+            scanf("%[^\n]",list.add);
             fflush(stdin);
             printf("..::email address:");
-            gets(list.email);
+            scanf("%[^\n]",list.email)
             printf("\n");
             fwrite(&list,sizeof(list),1,ft);
             fclose(fp);
@@ -157,7 +157,7 @@ int main(){
     case 5: system("cls");
             fflush(stdin);
             printf("\n\n\t..::DELETE A CONTACT\n\t==========================\n\t..::Enter the name of contact to delete:");
-            scanf("%[^\n]",&name);
+            scanf("%[^\n]",name);
             fp=fopen("contact.dll","r");
             ft=fopen("temp.dat","w");
             while(fread(&list,sizeof(list),1,fp)!=0)
