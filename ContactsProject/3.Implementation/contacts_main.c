@@ -33,18 +33,18 @@ int main(){
             for (;;){ 
                 fflush(stdin);
                 printf("To exit enter blank space in the name input\nName (Use identical):");
-                scanf("%[^\n]",&list.name);
+                scanf("%[^\n]",list.name);
                 if(strcmp(list.name,"")==0 || strcmp(list.name," ")==0)
                     break;
                 fflush(stdin);
                 printf("Phone:");
-                scanf("%ld",&list.phone);
+                scanf("%ld",list.phone);
                 fflush(stdin);
                 printf("address:");
-                scanf("%[^\n]",&list.add);
+                scanf("%[^\n]",list.add);
                 fflush(stdin);
                 printf("email address:");
-                fgets(list.email);
+                gets(list.email);
                 printf("\n");
                 fwrite(&list,sizeof(list),1,fp);
             }
@@ -87,7 +87,7 @@ int main(){
             found=0;
             printf("\n\n\t..::CONTACT SEARCH\n\t===========================\n\t..::Name of contact to search: ");
             fflush(stdin);
-            scanf("%[^\n]",&query);
+            scanf("%[^\n]",query);
             l=strlen(query);
             fp=fopen("contact.dll","r");
             system("cls");
