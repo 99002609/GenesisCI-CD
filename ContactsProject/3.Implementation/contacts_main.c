@@ -9,8 +9,6 @@ char name[20],add[20],email[30];
 char query[20],name[20];
 FILE *fp, *ft;
 int i,n,choice,l,found;
-choice = 0;
-
 
 int main(){
     main:
