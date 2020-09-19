@@ -102,7 +102,6 @@ int main(){
                     if (found%4==0)
                     {
                         printf("..::Press any key to continue...");
-                        getch();
                     }
                 }
             }
@@ -126,7 +125,7 @@ int main(){
             printf("..::Edit contact\n===============================\n\n\t..::Enter the name of contact to edit:");
             scanf("%[^\n]",name);
             while(fread(&list,sizeof(list),1,fp)==1){
-                if(stricmp(name,list.name)!=0)
+                if(strcmp(name,list.name)!=0)
                     fwrite(&list,sizeof(list),1,ft);
             }
             fflush(stdin);
@@ -141,7 +140,7 @@ int main(){
             scanf("%[^\n]",list.add);
             fflush(stdin);
             printf("..::email address:");
-            scanf("%[^\n]",list.email)
+            scanf("%[^\n]",list.email);
             printf("\n");
             fwrite(&list,sizeof(list),1,ft);
             fclose(fp);
