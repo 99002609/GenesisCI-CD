@@ -1,5 +1,10 @@
 #include<contacts_head.h>
 
+struct contact
+{
+long phone;
+char name[20],add[20],email[30];
+}list;
 
 char query[20],name[20];
 FILE *fp, *ft;
@@ -169,25 +174,18 @@ int main(){
 /*********************** other inputs**********************/
    
     default: printf("Invalid choice");
-            break;
-}
-
-
-printf("\n\n\n..::Enter the Choice:\n\n\t[1] Main Menu\t\t[0] Exit\n");
-scanf("%d",&ch);
-switch (ch)
-{
-case 1:
-goto main;
-
-
-case 0:
-break;
-
-default:
-printf("Invalid choice");
-break;
-}
-
-return 0;
+             break;
+    }
+    printf("\n\n\n..::Enter the Choice:\n\n\t[1] Main Menu\t\t[0] Exit\n");
+    scanf("%d",&ch);
+    switch (ch)
+    {
+        case 1: goto main;
+        
+        case 0: break;
+        
+        default: printf("Invalid choice");
+                break;
+    }
+    return 0;
 }
