@@ -34,17 +34,17 @@ int main(){
                 fflush(stdin);
                 printf("To exit enter blank space in the name input\nName (Use identical):");
                 scanf("%[^\n]",&list.name);
-                if(stricmp(list.name,"")==0 || stricmp(list.name," ")==0)
+                if(strcmp(list.name,"")==0 || strcmp(list.name," ")==0)
                     break;
                 fflush(stdin);
                 printf("Phone:");
-                scanf("%ld",&list.ph);
+                scanf("%ld",&list.phone);
                 fflush(stdin);
                 printf("address:");
                 scanf("%[^\n]",&list.add);
                 fflush(stdin);
                 printf("email address:");
-                gets(list.email);
+                fgets(list.email);
                 printf("\n");
                 fwrite(&list,sizeof(list),1,fp);
             }
@@ -63,7 +63,7 @@ int main(){
                 while(fread(&list,sizeof(list),1,fp)==1){
                     if(list.name[0]==i || list.name[0]==i-32)
                     {
-                        printf("\nName\t: %s\nPhone\t: %ld\nAddress\t: %s\nEmail\t: %s\n",list.name,list.ph,list.add,list.email);
+                        printf("\nName\t: %s\nPhone\t: %ld\nAddress\t: %s\nEmail\t: %s\n",list.name,list.phone,list.add,list.email);
                         found++;
                     }
                 }
@@ -97,7 +97,7 @@ int main(){
                     name[i]=list.name[i];
                 name[l]='\0';
                 if(stricmp(name,query)==0){
-                    printf("\n..::Name\t: %s\n..::Phone\t: %ld\n..::Address\t: %s\n..::Email\t:%s\n",list.name,list.ph,list.add,list.email);
+                    printf("\n..::Name\t: %s\n..::Phone\t: %ld\n..::Address\t: %s\n..::Email\t:%s\n",list.name,list.phone,list.add,list.email);
                     found++;
                     if (found%4==0)
                     {
@@ -175,8 +175,8 @@ int main(){
              break;
     }
     printf("\n\n\n..::Enter the Choice:\n\n\t[1] Main Menu\t\t[0] Exit\n");
-    scanf("%d",&ch);
-    switch (ch)
+    scanf("%d",&choice);
+    switch (choice)
     {
         case 1: goto main;
         
