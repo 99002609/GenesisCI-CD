@@ -160,7 +160,7 @@ int main(){
             fp=fopen("contact.dll","r");
             ft=fopen("temp.dat","w");
             while(fread(&list,sizeof(list),1,fp)!=0)
-                if (stricmp(name,list.name)!=0)
+                if (strcmp(name,list.name)!=0)
                     fwrite(&list,sizeof(list),1,ft);
             fclose(fp);
             fclose(ft);
